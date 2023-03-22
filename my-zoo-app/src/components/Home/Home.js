@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Image } from "react-bootstrap";
 
-const HomePage = () => {
+export const Home = () => {
   return (
     <div>
       <Container>
@@ -26,4 +26,3 @@ const HomePage = () => {
   );
 };
 
-export default HomePage;
