@@ -1,31 +1,61 @@
-import { useContext } from 'react';
-import { Link } from 'react-router-dom';
-
-import { AuthContext } from '../../contexts/AuthContext';
+import React from "react";
+import { Link } from "react-router-dom";
 
 export const Header = () => {
-    const { isAuthenticated, userEmail } = useContext(AuthContext);
-
-    return (
-        <header>
-            <h1><Link className="home" to="/">GamesPlay</Link></h1>
-            <nav>
-                <Link to="/posts">Posts</Link>
-                {isAuthenticated && (
-                    <div id="user">
-                        <span>{userEmail}</span>
-                        <Link to="/create-game">Create Game</Link>
-                        <Link to="/logout">Logout</Link>
-                    </div>
-                )}
-
-                {!isAuthenticated && (
-                    <div id="guest">
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </div>
-                )}
-            </nav>
-        </header>
-    );
+  return (
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <div className="container">
+        <Link className="navbar-brand" to="/">
+         <img src="/zoo.png" alt="Zoo" />
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/posts">
+                Posts
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/tickets">
+                Buy Tickets
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/admin">
+                Admin
+              </Link>
+            </li>
+          </ul>
+          <ul className="navbar-nav ml-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/register">
+                Register
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 };

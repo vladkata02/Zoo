@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Button } from 'react-bootstrap';
 
-const Posts = () => {
+export const Posts = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -31,5 +31,3 @@ const Posts = () => {
     </div>
   );
 };
-
-export default Posts;

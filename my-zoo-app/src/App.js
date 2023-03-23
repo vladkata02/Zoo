@@ -11,6 +11,9 @@ import { Home } from "./components/Home/Home";
 import { Login } from "./components/Login/Login";
 import { Logout } from "./components/Logout/Logout";
 import { Register } from "./components/Register/Register";
+import { Tickets } from './components/Tickets/Tickets';
+import { Posts } from './components/Posts/Posts';
+import { Admin } from './components/Admin/Admin';
 // import { CreateGame } from "./components/CreateGame/CreateGame";
 // import { Catalog } from "./components/Catalog/Catalog";
 // import { GameDetails } from './components/GameDetails/GameDetails';
@@ -99,6 +102,9 @@ function App() {
                 <main id="main-content">
                     <Routes>
                         <Route path='/' element={<Home />} />
+                        <Route path='/posts' element={<Posts />} />
+                        <Route path='/tickets' element={<Tickets />} />
+                        <Route path='/admin' element={<Admin />} />
                         <Route path='/login' element={<Login />} />
                         <Route path='/logout' element={<Logout />} />
                         <Route path='/register' element={<Register />} />

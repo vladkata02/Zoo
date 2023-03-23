@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
 
-const Tickets = () => {
+export const Tickets = () => {
   const [numTickets, setNumTickets] = useState(1);
   const [totalPrice, setTotalPrice] = useState(10);
 
@@ -48,5 +48,3 @@ const Tickets = () => {
     </Container>
   );
 };
-
-export default Tickets;
