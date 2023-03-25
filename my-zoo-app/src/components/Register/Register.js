@@ -1,60 +1,88 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-
 import { useForm } from "../../hooks/useForm";
 import { AuthContext } from "../../contexts/AuthContext";
+import { Button } from "react-bootstrap";
+import "./Register.css";
 
 export const Register = () => {
-    const { onRegisterSubmit } = useContext(AuthContext);
-    const { values, changeHandler, onSubmit } = useForm({
-        email: '',
-        password: '',
-        confirmPassword: '',
-    }, onRegisterSubmit);
+  const { onRegisterSubmit } = useContext(AuthContext);
+  const { values, changeHandler, onSubmit } = useForm(
+    {
+      email: "",
+      password: "",
+      confirmPassword: "",
+    },
+    onRegisterSubmit
+  );
 
-    return (
-        <section id="register-page" className="content auth">
-            <form id="register" method="post" onSubmit={onSubmit}>
-                <div className="container">
-                    <div className="brand-logo"></div>
-                    <h1>Register</h1>
-
-                    <label htmlFor="email">Email:</label>
+  return (
+    <section id="register-page" className="content auth">
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-md-6">
+            <div className="card mt-5 green-shadow">
+              <div className="card-body">
+                <h2 className="card-title mb-4 text-center">Register</h2>
+                <form method="post" onSubmit={onSubmit}>
+                  <div className="form-group">
+                    <label htmlFor="email">Email</label>
                     <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="maria@email.com"
-                        value={values.email}
-                        onChange={changeHandler}
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="form-control"
+                      placeholder="pompata@email.com"
+                      value={values.email}
+                      onChange={changeHandler}
+                      required
                     />
+                  </div>
 
-                    <label htmlFor="pass">Password:</label>
+                  <div className="form-group">
+                    <label htmlFor="password">Password</label>
                     <input
-                        type="password"
-                        name="password"
-                        id="register-password"
-                        value={values.password}
-                        onChange={changeHandler}
+                      type="password"
+                      name="password"
+                      id="password"
+                      className="form-control"
+                      value={values.password}
+                      onChange={changeHandler}
+                      required
                     />
+                  </div>
 
-                    <label htmlFor="con-pass">Confirm Password:</label>
+                  <div className="form-group">
+                    <label htmlFor="confirmPassword">Confirm Password</label>
                     <input
-                        type="password"
-                        name="confirmPassword"
-                        id="confirm-password"
-                        value={values.confirmPassword}
-                        onChange={changeHandler}
+                      type="password"
+                      name="confirmPassword"
+                      id="confirmPassword"
+                      className="form-control"
+                      value={values.confirmPassword}
+                      onChange={changeHandler}
+                      required
                     />
+                  </div>
 
-                    <input className="btn submit" type="submit" value="Register" />
-
-                    <p className="field">
-                        <span>If you already have profile click <Link to="/login">here</Link></span>
-                    </p>
+                  <Button type="submit" className="btn btn-primary btn-block mt-4">
+                    Register
+                  </Button>
+                </form>
+                <div className="mt-4 text-center">
+                  <p className="mb-0">
+                    If you already have a profile,{" "}
+                    <Link to="/login" className="text-primary">
+                      login here
+                    </Link>
+                    .
+                  </p>
                 </div>
-            </form>
-        </section>
-
-    );
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };

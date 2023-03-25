@@ -1,10 +1,11 @@
 import React from "react";
 import { Carousel, Container } from "react-bootstrap";
+import "./Home.css";
 
 export const Home = () => {
   return (
     <Container fluid>
-      <Carousel>
+      <Carousel interval={3000}>
         <Carousel.Item>
           <img
             className="d-block w-100"

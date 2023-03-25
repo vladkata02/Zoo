@@ -1,12 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 export const Header = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light custom-nav">
       <div className="container">
-        <Link className="navbar-brand" to="/">
-         <img src="/zoo.png" alt="Zoo" />
+        <Link className="nav-link rounded custom-logo" to="/" style={{ transition: "background-color 0.2s ease-in-out" }}>
+          Zoo
         </Link>
         <button
           className="navbar-toggler"
@@ -22,34 +23,34 @@ export const Header = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link rounded" to="/" style={{ transition: "background-color 0.2s ease-in-out" }}>
                 Home
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/posts">
+              <Link className="nav-link rounded" to="/posts" style={{ transition: "background-color 0.2s ease-in-out" }}>
                 Posts
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/tickets">
+              <Link className="nav-link rounded" to="/tickets" style={{ transition: "background-color 0.2s ease-in-out" }}>
                 Buy Tickets
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/admin">
+              <Link className="nav-link rounded" to="/admin" style={{ transition: "background-color 0.2s ease-in-out" }}>
                 Admin
               </Link>
             </li>
           </ul>
-          <ul className="navbar-nav ml-auto">
+          <ul className="navbar-nav ml-auto login">
             <li className="nav-item">
-              <Link className="nav-link" to="/login">
+              <Link className="nav-link rounded" to="/login" style={{ transition: "background-color 0.2s ease-in-out" }}>
                 Login
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/register">
+              <Link className="nav-link rounded" to="/register" style={{ transition: "background-color 0.2s ease-in-out" }}>
                 Register
               </Link>
             </li>

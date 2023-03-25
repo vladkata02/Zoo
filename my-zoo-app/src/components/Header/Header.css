@@ -1,0 +1,36 @@
+.custom-nav {
+    font-size: 1.5rem;
+    border-bottom: #409932 solid 4px;
+}
+
+.custom-logo {
+  background-color: #409932;
+  margin-right: 6px;
+  color: white !important;
+  border: #409932 solid 1px;
+}
+.custom-logo:hover {
+  background-color: #F8F9FA !important;
+  color: #707071 !important;
+}
+
+.nav-link {
+  transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  background-color: #409932;
+}
+
+.nav-link.rounded {
+    border-radius: 50px;
+    padding: 10px 15px;
+}
+
+.navbar-nav .nav-link {
+    margin-right: 6px;
+}
+
+.login {
+    margin-left: 500px;
+}
