@@ -32,5 +32,6 @@
 }
 
 .login {
-    margin-left: 500px;
+  margin-right: 0px !important;
+  margin-left: auto;
 }
