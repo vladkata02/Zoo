@@ -51,10 +51,10 @@ export const Header = () => {
                 <li className="nav-item">
                   <Link
                     className="nav-link rounded"
-                    to="/tickets"
+                    to="/create-post"
                     style={{ transition: "background-color 0.2s ease-in-out" }}
                   >
-                    Buy Tickets
+                    Create post
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -69,26 +69,43 @@ export const Header = () => {
               </>
             )}
           </ul>
-          <ul className="navbar-nav ml-auto login">
-            <li className="nav-item">
-              <Link
-                className="nav-link rounded login-link"
-                to="/login"
-                style={{ transition: "background-color 0.2s ease-in-out" }}
-              >
-                Login
-              </Link>
-            </li>
-            <li className="nav-item register">
-              <Link
-                className="nav-link rounded"
-                to="/register"
-                style={{ transition: "background-color 0.2s ease-in-out" }}
-              >
-                Register
-              </Link>
-            </li>
-          </ul>
+          {!isAuthenticated && (
+            <ul className="navbar-nav ml-auto auth">
+              <li className="nav-item">
+                <Link
+                  className="nav-link rounded login-link"
+                  to="/login"
+                  style={{ transition: "background-color 0.2s ease-in-out" }}
+                >
+                  Login
+                </Link>
+              </li>
+              <li className="nav-item register">
+                <Link
+                  className="nav-link rounded"
+                  to="/register"
+                  style={{ transition: "background-color 0.2s ease-in-out" }}
+                >
+                  Register
+                </Link>
+              </li>
+            </ul>
+          )}
+          {isAuthenticated && (
+            <ul className="navbar-nav ml-auto auth">
+              <li className="nav-item">
+                <Link
+                  className="nav-link rounded"
+                  to="/logout"
+                  style={{
+                    transition: "background-color 0.2s ease-in-out",
+                  }}
+                >
+                  Logout
+                </Link>
+              </li>
+            </ul>
+          )}
         </div>
       </div>
     </nav>
