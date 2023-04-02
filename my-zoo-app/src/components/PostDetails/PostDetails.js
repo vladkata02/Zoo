@@ -17,6 +17,7 @@ export const PostDetails = () => {
   const { userId, isAuthenticated, userEmail } = useAuthContext();
   const { deletePost } = usePostContext();
   const [post, dispatch] = useReducer(postReducer, {});
+  const [errors, setErrors] = useState({});
   const postService = useService(postServiceFactory);
   const navigate = useNavigate();
 
@@ -30,13 +31,13 @@ export const PostDetails = () => {
         comments,
       };
 
-      dispatch({ type: "GAME_FETCH", payload: postState });
+      dispatch({ type: "POST_FETCH", payload: postState });
     });
   }, [postId]);
 
-  const onCommentSubmit = async (values) => {
+  const onCommentSubmit = async (values) => {  
     const response = await commentService.create(postId, values.comment);
-
+  
     dispatch({
       type: "COMMENT_ADD",
       payload: response,
