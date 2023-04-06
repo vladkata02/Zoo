@@ -15,7 +15,6 @@ export const AddComment = ({ onCommentSubmit }) => {
     }
     onCommentSubmit({ comment });
     setComment("");
-    
   };
 
   const handleChange = (event) => {

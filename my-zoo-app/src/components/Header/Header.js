@@ -60,10 +60,10 @@ export const Header = () => {
                 <li className="nav-item">
                   <Link
                     className="nav-link rounded"
-                    to="/admin"
+                    to="/tickets"
                     style={{ transition: "background-color 0.2s ease-in-out" }}
                   >
-                    Admin
+                    Tickets
                   </Link>
                 </li>
               </>
@@ -93,6 +93,11 @@ export const Header = () => {
           )}
           {isAuthenticated && (
             <ul className="navbar-nav ml-auto auth">
+              <li className="nav-item">
+                <span className="nav-link rounded">
+                  {userEmail}
+                </span>
+              </li>
               <li className="nav-item">
                 <Link
                   className="nav-link rounded"
