@@ -18,6 +18,7 @@ import { RouteGuard } from "./components/common/RouteGuard";
 import { PostOwner } from "./components/common/PostOwner";
 import { TicketProvider } from "./contexts/TicketContext";
 import { ErrorBoundary } from "./components/ErrorBoundary/ErrorBoundary";
+import { PageNotFound } from "./components/PageNotFound/PageNotFound";
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
                       }
                     />
                   </Route>
+                  <Route path="*" element={<PageNotFound />} />
                 </Routes>
               </main>
 

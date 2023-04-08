@@ -1,6 +1,6 @@
 Zoo App
 
-Welcome to the Zoo App! This app allows users to view information about the zoo, create and edit posts, and buy tickets.
+Welcome to the Zoo App! This app is created using React and it allows users to view information about the zoo, create and edit posts, and buy tickets.
 Features
 
 The Zoo App includes the following features:
@@ -17,10 +17,19 @@ Getting Started
 
 Permissions
 
-| First Header  | Second Header |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| Permission        | User | Guest |
+| ------------------| ------------ |
+| View Home Page    | Yes  | Yes   |
+| View all posts    | Yes  | Yes   |
+| Create post       | Yes  | No    |
+| View post         | Yes  | Yes   |
+| Edit post         | Yes  | No    |
+| Delete post       | Yes  | No    |
+| Comment post      | Yes  | No    |
+| Buy tickets       | Yes  | No    |
+| Login             | No   | Yes   |
+| Register          | No   | Yes   |
+| Logout            | Yes  | No    |
 
 To get started with the Zoo App, follow these steps:
 
@@ -32,4 +41,4 @@ To get started with the Zoo App, follow these steps:
 
 Contributors
 
-The Zoo App was created by vboshnakovv. If you would like to contribute to this project, please submit a pull request.
+The Zoo App was created by "vboshnakovv". If you would like to contribute to this project, please submit a pull request.
