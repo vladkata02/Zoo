@@ -33,7 +33,7 @@ export const Tickets = () => {
     const newBoughtTicket = {
       numTickets: numTickets,
       totalPrice: totalPrice,
-      userId: userId // Add userId to the new ticket
+      userId: userId
     };
 
     await createTicket(newBoughtTicket);

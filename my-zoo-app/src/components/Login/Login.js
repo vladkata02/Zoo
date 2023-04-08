@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useForm } from "../../hooks/useForm";
@@ -10,13 +10,30 @@ const LoginFormKeys = {
 
 export const Login = () => {
   const { onLoginSubmit } = useContext(AuthContext);
-  const { values, changeHandler, onSubmit } = useForm(
-    {
-      [LoginFormKeys.Email]: "",
-      [LoginFormKeys.Password]: "",
-    },
-    onLoginSubmit
-  );
+  const [formErrors, setFormErrors] = useState({});
+  const { values, changeHandler } = useForm({
+    [LoginFormKeys.Email]: "",
+    [LoginFormKeys.Password]: "",
+  });
+
+  const onSubmit = (event) => {
+    event.preventDefault();
+
+    // Validate form data
+    const errors = {};
+    if (!values[LoginFormKeys.Email]) {
+      errors[LoginFormKeys.Email] = "Please enter your email address";
+    }
+    if (!values[LoginFormKeys.Password]) {
+      errors[LoginFormKeys.Password] = "Please enter your password";
+    }
+    setFormErrors(errors);
+
+    // Submit form data if there are no errors
+    if (Object.keys(errors).length === 0) {
+      onLoginSubmit(values);
+    }
+  };
 
   return (
     <div className="container">
@@ -31,27 +48,42 @@ export const Login = () => {
                   <input
                     type="email"
                     id="email"
-                    className="form-control"
+                    className={`form-control ${
+                      formErrors[LoginFormKeys.Email] ? "is-invalid" : ""
+                    }`}
                     name={LoginFormKeys.Email}
                     value={values[LoginFormKeys.Email]}
                     onChange={changeHandler}
-                    required
                   />
+                  {formErrors[LoginFormKeys.Email] && (
+                    <div className="invalid-feedback">
+                      {formErrors[LoginFormKeys.Email]}
+                    </div>
+                  )}
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
                   <input
                     type="password"
                     id="password"
-                    className="form-control"
+                    className={`form-control ${
+                      formErrors[LoginFormKeys.Password] ? "is-invalid" : ""
+                    }`}
                     name={LoginFormKeys.Password}
                     value={values[LoginFormKeys.Password]}
                     onChange={changeHandler}
-                    required
                   />
+                  {formErrors[LoginFormKeys.Password] && (
+                    <div className="invalid-feedback">
+                      {formErrors[LoginFormKeys.Password]}
+                    </div>
+                  )}
                 </div>
 
-                <button type="submit" className="btn btn-primary btn-block mt-4">
+                <button
+                  type="submit"
+                  className="btn btn-primary btn-block mt-4"
+                >
                   Log in
                 </button>
                 <p className="mt-3 mb-0 text-center">
