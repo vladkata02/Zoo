@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer } from "react";
+import { useEffect, useReducer } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 
 import { postServiceFactory } from "../../services/postService";
@@ -17,7 +17,6 @@ export const PostDetails = () => {
   const { userId, isAuthenticated, userEmail } = useAuthContext();
   const { deletePost } = usePostContext();
   const [post, dispatch] = useReducer(postReducer, {});
-  const [errors, setErrors] = useState({});
   const postService = useService(postServiceFactory);
   const navigate = useNavigate();
 
