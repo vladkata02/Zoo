@@ -1,6 +1,7 @@
 Zoo App
 
 Welcome to the Zoo App! This app is created using React and it allows users to view information about the zoo, create and edit posts and buy tickets.
+
 Features
 
 The Zoo App includes the following features:
