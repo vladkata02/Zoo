@@ -18,7 +18,7 @@ Getting Started
 Permissions
 
 | Permission        | User | Guest |
-|-------------------|--------------|
+| ----------------- | ---- | ----- |
 | View Home Page    | Yes  | Yes   |
 | View all posts    | Yes  | Yes   |
 | Create post       | Yes  | No    |
