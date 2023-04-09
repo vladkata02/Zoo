@@ -42,4 +42,4 @@ To get started with the Zoo App, follow these steps:
 
 Contributors
 
-The Zoo App was created by "vboshnakovv". If you would like to contribute to this project, please submit a pull request.
+The Zoo App was created by "vladkata02". If you would like to contribute to this project, please submit a pull request.
