@@ -13,8 +13,6 @@ The Zoo App includes the following features:
 
     Login/Register: The app includes a login and register feature, which allows users to create an account or login to an existing account.
 
-Getting Started
-
 Permissions
 
 | Permission        | User | Guest |
@@ -30,6 +28,8 @@ Permissions
 | Login             | No   | Yes   |
 | Register          | No   | Yes   |
 | Logout            | Yes  | No    |
+
+Getting Started
 
 To get started with the Zoo App, follow these steps:
 
